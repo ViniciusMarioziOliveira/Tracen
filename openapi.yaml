@@ -1,0 +1,271 @@
+openapi: 3.0.0
+
+info:
+  title: API Academia Tracen
+  description: API para gerenciamento de alunos e controle de acesso (catraca) com autenticação JWT
+  version: "1.0.0"
+  contact:
+    name: Vini do Back
+
+servers:
+  - url: http://localhost:5000
+    description: Servidor local
+  - url: https://sua-api-tracen.vercel.app
+    description: Servidor de produção
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Aluno:
+      type: object
+      properties:
+        nome:
+          type: string
+          example: João da Silva
+        cpf:
+          type: string
+          example: "12345678900"
+        status:
+          type: string
+          example: ativo
+        bloqueado:
+          type: boolean
+          example: false
+
+    LoginRequest:
+      type: object
+      required: [usuario, senha]
+      properties:
+        usuario:
+          type: string
+          example: admin
+        senha:
+          type: string
+          example: 123
+
+    LoginResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+    CatracaRequest:
+      type: object
+      required: [cpf]
+      properties:
+        cpf:
+          type: string
+          example: "12345678900"
+
+    CatracaResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: liberado
+        msg:
+          type: string
+          example: Acesso liberado
+
+paths:
+
+  /:
+    get:
+      summary: Rota de boas-vindas
+      tags: [Sistema]
+      responses:
+        "200":
+          description: API online
+
+  /login:
+    post:
+      summary: Login do administrador
+      tags: [Autenticação]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        "200":
+          description: Login realizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        "401":
+          description: Credenciais inválidas
+
+  /catraca:
+    post:
+      summary: Validação de acesso do aluno (catraca)
+      tags: [Catraca]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatracaRequest'
+      responses:
+        "200":
+          description: Acesso liberado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatracaResponse'
+        "403":
+          description: Acesso bloqueado
+        "404":
+          description: Aluno não encontrado
+
+  /alunos:
+    get:
+      summary: Listar todos os alunos
+      tags: [Alunos]
+      responses:
+        "200":
+          description: Lista de alunos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Aluno'
+
+    post:
+      summary: Criar novo aluno
+      tags: [Alunos]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [nome, cpf]
+              properties:
+                nome:
+                  type: string
+                cpf:
+                  type: string
+      responses:
+        "201":
+          description: Aluno criado com sucesso
+        "400":
+          description: Dados inválidos
+
+  /alunos/{cpf}:
+    get:
+      summary: Buscar aluno por CPF
+      tags: [Alunos]
+      parameters:
+        - name: cpf
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Aluno encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aluno'
+        "404":
+          description: Aluno não encontrado
+
+    put:
+      summary: Atualizar completamente um aluno
+      tags: [Alunos]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: cpf
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [nome, status, bloqueado]
+              properties:
+                nome:
+                  type: string
+                status:
+                  type: string
+                bloqueado:
+                  type: boolean
+      responses:
+        "200":
+          description: Aluno atualizado
+        "400":
+          description: Dados inválidos
+        "404":
+          description: Aluno não encontrado
+
+    patch:
+      summary: Atualizar parcialmente um aluno
+      tags: [Alunos]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: cpf
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                status:
+                  type: string
+                bloqueado:
+                  type: boolean
+      responses:
+        "200":
+          description: Atualizado com sucesso
+        "400":
+          description: Dados inválidos
+        "404":
+          description: Aluno não encontrado
+
+    delete:
+      summary: Deletar um aluno
+      tags: [Alunos]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: cpf
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Aluno deletado com sucesso
+        "404":
+          description: Aluno não encontrado
+
+tags:
+  - name: Sistema
+  - name: Autenticação
+  - name: Catraca
+  - name: Alunos
