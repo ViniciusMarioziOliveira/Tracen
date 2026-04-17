@@ -20,23 +20,13 @@ Projetada para ser simples, eficiente e facilmente integrável com sistemas web 
 
 ## 🚀 Tecnologias Utilizadas
 
-![Image](https://images.openai.com/static-rsc-4/Y_i2gFr9dFhp_DA1b2-nQ1hIfacd4L7xfysWqSp5JwfK4EX_471aYNLONpyuB9c2WOEW-WEh7OmK-6R-eoWHKRaSAgYBhV02egOg22k0VGCQBJ42euebjYnOH0cUb9CCJfhzMqlOsxEZMl22M7aiGsBSTsmd5xQVJ0soYOEU-C5Aw9ZBnLs6wE5yqoplpFWt?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/KRMP65IxsAnTMNj9pB05C71RIHbLS4cyi-EJb84nyVK_ymFSjQ1pk1AP4CFceqQK1Is8-0lUEv33MjPn2VxmVcfKxoeLFSM2XY2xTfc9OhJOFN4oNzy37bTbUdqC4xE9luqYm-DzujW-JQtVh-CPz-N95KOeTQ2TYaUvfn6XlvUpgAAj0-ai3tnbbY4Tl-Kl?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/1sBDt-qRxOqKT0X6mxvCAxhHU31RP4-nhp0DC-dyJlEL1Q9m0WuI9gk_-02rNXs6cDjIazu2en7hNWKw8uMi9HkZaBHgUMF7d6Xn_8tGrCF_g4SrgTgkhVOZZCMdR7VZnmyMJ3B5MaB6T-Npyl3_lAXdrVrJOZOcQA3kg8DXfI1bYnsdROq7pjJfCjiboaK5?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/LEj1ZGdFD05-zks2kxt6p7s8B1biu5giG86Z-C9TeAnzf9Cj0bK2B3u7gibTsE-JMO0RD_XlI9Msn1tZQZyofx1pmt1lRVXlxjAq0fBpEJOb28E3wpQUCyZozripJRHrULewINGjcACa7Tmu9PNaywyJ3c84EDh6Gn5DWWkPSu7xsIX8BqdKHJQJhzssc4Fm?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/7ZSQcBP8MT5ZqYaZjzE9RwOWLV-ncal9P5-souLmc6N_cBPwh9lBM-ix4UnhDGd_jv-4Dr7szWDO8VbYhQwND8pxjXrCQui35jsHadFZ_006jj-tsYXjnKPH4IXYm0e62znnKLlkx1K5kZ4q84Zy1sMSHqcCanPZqiUo6Vouzw_rJEthWRZ02GjO0ZAgFjlT?purpose=fullsize)
-
-* **Python** → Linguagem principal
-* **Flask** → Framework web leve e poderoso
-* **Firebase Firestore** → Banco de dados NoSQL em tempo real
-* **JWT (JSON Web Token)** → Autenticação segura
-* **Vercel** → Deploy e hospedagem
-* **Swagger / OpenAPI (Flasgger)** → Documentação interativa da API
-* **CORS & dotenv** → Configuração e segurança
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge\&logo=flask\&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge\&logo=firebase\&logoColor=black)
+![Firestore](https://img.shields.io/badge/Firestore-FF7139?style=for-the-badge\&logo=firebase\&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge\&logo=jsonwebtokens\&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge\&logo=vercel\&logoColor=white)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge\&logo=swagger\&logoColor=black)
 
 ---
 
