@@ -6,75 +6,43 @@ API RESTful desenvolvida em Flask para gerenciamento de alunos e controle de ace
 
 ## 📌 Sobre o Projeto
 
-A **API Academia Tracen** permite:
+A **API Academia Tracen** é uma solução completa para academias que desejam digitalizar e automatizar:
 
-* Cadastro e gerenciamento de alunos
-* Controle de acesso via catraca
-* Autenticação segura com JWT
-* Integração com Firebase Firestore
-* Documentação automática com Swagger (OpenAPI)
+* 👨‍🎓 Cadastro e gerenciamento de alunos
+* 🚪 Controle de acesso inteligente (catraca)
+* 🔐 Autenticação segura com JWT
+* ☁️ Armazenamento em nuvem com Firebase
+* 📄 Documentação interativa com Swagger (OpenAPI)
+
+Projetada para ser simples, eficiente e facilmente integrável com sistemas web ou mobile.
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-* Python + Flask
-* Firebase Firestore
-* JWT (JSON Web Token)
-* Flasgger (Swagger)
-* dotenv
-* CORS
+![Image](https://images.openai.com/static-rsc-4/Y_i2gFr9dFhp_DA1b2-nQ1hIfacd4L7xfysWqSp5JwfK4EX_471aYNLONpyuB9c2WOEW-WEh7OmK-6R-eoWHKRaSAgYBhV02egOg22k0VGCQBJ42euebjYnOH0cUb9CCJfhzMqlOsxEZMl22M7aiGsBSTsmd5xQVJ0soYOEU-C5Aw9ZBnLs6wE5yqoplpFWt?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/KRMP65IxsAnTMNj9pB05C71RIHbLS4cyi-EJb84nyVK_ymFSjQ1pk1AP4CFceqQK1Is8-0lUEv33MjPn2VxmVcfKxoeLFSM2XY2xTfc9OhJOFN4oNzy37bTbUdqC4xE9luqYm-DzujW-JQtVh-CPz-N95KOeTQ2TYaUvfn6XlvUpgAAj0-ai3tnbbY4Tl-Kl?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/1sBDt-qRxOqKT0X6mxvCAxhHU31RP4-nhp0DC-dyJlEL1Q9m0WuI9gk_-02rNXs6cDjIazu2en7hNWKw8uMi9HkZaBHgUMF7d6Xn_8tGrCF_g4SrgTgkhVOZZCMdR7VZnmyMJ3B5MaB6T-Npyl3_lAXdrVrJOZOcQA3kg8DXfI1bYnsdROq7pjJfCjiboaK5?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/LEj1ZGdFD05-zks2kxt6p7s8B1biu5giG86Z-C9TeAnzf9Cj0bK2B3u7gibTsE-JMO0RD_XlI9Msn1tZQZyofx1pmt1lRVXlxjAq0fBpEJOb28E3wpQUCyZozripJRHrULewINGjcACa7Tmu9PNaywyJ3c84EDh6Gn5DWWkPSu7xsIX8BqdKHJQJhzssc4Fm?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/7ZSQcBP8MT5ZqYaZjzE9RwOWLV-ncal9P5-souLmc6N_cBPwh9lBM-ix4UnhDGd_jv-4Dr7szWDO8VbYhQwND8pxjXrCQui35jsHadFZ_006jj-tsYXjnKPH4IXYm0e62znnKLlkx1K5kZ4q84Zy1sMSHqcCanPZqiUo6Vouzw_rJEthWRZ02GjO0ZAgFjlT?purpose=fullsize)
+
+* **Python** → Linguagem principal
+* **Flask** → Framework web leve e poderoso
+* **Firebase Firestore** → Banco de dados NoSQL em tempo real
+* **JWT (JSON Web Token)** → Autenticação segura
+* **Vercel** → Deploy e hospedagem
+* **Swagger / OpenAPI (Flasgger)** → Documentação interativa da API
+* **CORS & dotenv** → Configuração e segurança
 
 ---
 
-## ⚙️ Configuração do Ambiente
+## 🌐 API em Produção
 
-### 1. Clone o projeto
-
-```bash
-git clone https://github.com/seu-repositorio/tracen-api.git
-cd tracen-api
-```
-
-### 2. Crie o arquivo `.env`
-
-```env
-SECRET_KEY=sua_chave_secreta
-ADM_USUARIO=admin
-ADM_SENHA=123
-
-# Para ambiente Vercel (opcional)
-FIREBASE_CREDENTIALS={...json...}
-```
-
-### 3. Instale as dependências
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure o Firebase
-
-* Local: coloque o arquivo `firebase.json` na raiz
-* Produção (Vercel): use variável de ambiente `FIREBASE_CREDENTIALS`
-
-### 5. Execute a aplicação
-
-```bash
-python app.py
-```
-
-A API estará disponível em:
-
-```
-http://localhost:5000
-```
-
----
-
-## 📖 Documentação Swagger
-
-Acesse:
+Acesse a documentação interativa:
 
 ```
 https://tracen-beta.vercel.app/apidocs/
@@ -84,7 +52,7 @@ https://tracen-beta.vercel.app/apidocs/
 
 ## 🔐 Autenticação
 
-A API utiliza **JWT (Bearer Token)**.
+A API utiliza autenticação baseada em **JWT (Bearer Token)**.
 
 ### 🔑 Login
 
@@ -113,7 +81,7 @@ POST /login
 
 ### 🔒 Rotas protegidas
 
-Envie o token no header:
+Para acessar rotas protegidas, envie o token no header:
 
 ```
 Authorization: Bearer SEU_TOKEN
@@ -127,7 +95,7 @@ Authorization: Bearer SEU_TOKEN
 
 #### GET /
 
-Retorna status da API
+Retorna o status da API
 
 ```json
 {
@@ -150,7 +118,7 @@ Realiza login e retorna token JWT
 
 #### POST /catraca
 
-Valida acesso do aluno
+Valida o acesso do aluno na academia
 
 #### Body:
 
@@ -160,9 +128,9 @@ Valida acesso do aluno
 }
 ```
 
-#### Respostas possíveis:
+#### Respostas:
 
-✅ Liberado:
+✅ **Liberado**
 
 ```json
 {
@@ -171,7 +139,7 @@ Valida acesso do aluno
 }
 ```
 
-❌ Bloqueado:
+❌ **Bloqueado**
 
 ```json
 {
@@ -188,13 +156,9 @@ Valida acesso do aluno
 
 Lista todos os alunos
 
----
-
 #### 🔍 GET /alunos/{cpf}
 
 Busca aluno por CPF
-
----
 
 #### ➕ POST /alunos 🔒
 
@@ -209,8 +173,8 @@ Cria um novo aluno
 
 Campos opcionais:
 
-* `status` (default: "ativo")
-* `bloqueado` (default: false)
+* `status` (default: `"ativo"`)
+* `bloqueado` (default: `false`)
 
 ---
 
@@ -260,9 +224,9 @@ Remove um aluno
 
 ## 🧠 Regras de Negócio
 
-* Aluno **bloqueado** ou com status diferente de `"ativo"` não passa na catraca
-* Token expira em **1 hora**
-* CPF é usado como ID único no banco
+* 🚫 Aluno **bloqueado** ou com status diferente de `"ativo"` não passa na catraca
+* ⏳ Token expira em **1 hora**
+* 🆔 CPF é utilizado como identificador único
 
 ---
 
@@ -289,14 +253,14 @@ Remove um aluno
 
 ## 📌 Observações
 
-* Certifique-se de proteger sua `SECRET_KEY`
-* Nunca exponha suas credenciais do Firebase
-* Utilize HTTPS em produção
+* 🔐 Proteja sua `SECRET_KEY`
+* ☁️ Nunca exponha credenciais do Firebase
+* 🔒 Utilize HTTPS em produção
 
 ---
 
 ## 🏁 Conclusão
 
-A API fornece uma base sólida para sistemas de academia com controle de acesso, podendo ser facilmente integrada com frontends web ou mobile.
+A **API Academia Tracen** oferece uma base moderna e escalável para sistemas de academias, com foco em segurança, desempenho e simplicidade de integração.
 
 ---
