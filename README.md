@@ -77,7 +77,7 @@ http://localhost:5000
 Acesse:
 
 ```
-http://localhost:5000/apidocs
+https://tracen-beta.vercel.app/apidocs/
 ```
 
 ---
@@ -273,7 +273,8 @@ Remove um aluno
  ┣ 📜 app.py
  ┣ 📜 auth.py
  ┣ 📜 openapi.yaml
- ┣ 📜 firebase.json (ou env)
+ ┣ 📜 firebase.json
+ ┣ 📜 vercel.json
  ┣ 📜 .env
  ┗ 📜 requirements.txt
 ```
