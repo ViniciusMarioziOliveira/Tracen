@@ -237,7 +237,7 @@ Remove um aluno
 
 ## 👨‍💻 Autor
 
-**Vini do Back**
+**Vini do Back** e **John do Front**
 
 ---
 
